@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-center align-items-center mt-5">
+    <div class="col-md-5 p-5 shadow-sm border rounded-5 border-primary bg-white">
+        <h2 class="text-center mb-4 text-primary">Admin-Login</h2>
+        <form [formGroup]="adminloginForm" (ngSubmit)="adminLogin()">
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="email" class="form-control border border-primary" formControlName="username">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control border border-primary" formControlName="password">
+            </div>
+            <p class="small"><a class="text-primary">Forgot password?</a></p>
+            <div class="d-grid">
+                <button class="btn btn-primary" type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
