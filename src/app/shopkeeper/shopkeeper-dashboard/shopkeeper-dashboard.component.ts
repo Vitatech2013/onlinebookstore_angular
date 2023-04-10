@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shopkeeper-dashboard',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopkeeperDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router:Router
+  ) { }
 
   ngOnInit(): void {
   }
-
+  logOut(){
+    sessionStorage.removeItem('shopkeeper')
+    this.router.navigate(['/welcome/shopkeeper-login'])
+  }
 }

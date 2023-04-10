@@ -1,1 +1,35 @@
-<p>admin-view-shopkeepers works!</p>
+<div class="container table-responsive py-5"> 
+    <table class="table table-bordered table-hover text-center">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">S.No</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Namer</th>
+          <th scope="col">Username</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Email</th>
+          <th scope="col">Address</th>
+          <th scope="col">Shopname</th>          
+          <th scope="col">Branch</th>
+          <th scope="col">Shop Adrress</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let s of shopKeepers index as i">
+          <td>{{i+1}}</td>
+          <td>{{s.firstname}}</td>
+          <td>{{s.lastname}}</td>
+          <td>{{s.username}}</td>
+          <td>{{s.mobileno}}</td>
+          <td>{{s.emailid}}</td>
+          <td>{{s.address}}</td>
+          <td>{{s.shopname}}</td>
+          <td>{{s.branch}}</td>
+          <td>{{s.shopaddress}}</td>
+          <td> <i class="bi bi-trash3-fill text-danger" style="font-size: 1.5em;" (click)="deleteshopkeeper(s._id)"></i></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    

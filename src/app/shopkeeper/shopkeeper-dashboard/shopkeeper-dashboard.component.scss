@@ -1,8 +1,11 @@
-
-a{
-    color: white;
+ul{
+    li{
+        a{
+            color: white;
+            cursor: pointer;
+        }
+        a.active{
+            color:greenyellow
+        }
+    }
 }
-a.active{
-    color:goldenrod;
- }
-

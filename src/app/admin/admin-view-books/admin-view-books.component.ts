@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/shared/service/admin.service';
 
 @Component({
   selector: 'app-admin-view-books',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-view-books.component.scss']
 })
 export class AdminViewBooksComponent implements OnInit {
-
-  constructor() { }
+allBooks:any
+  constructor(
+    private adminService:AdminService
+  ) { }
 
   ngOnInit(): void {
+    this.adminService.viewAllBooks().subscribe((res:any)=>{
+      this.allBooks=res
+      console.log(this.allBooks);
+      
+    })
   }
-
+  downloadBook(url:any){
+    window.open(url)
+  }
 }

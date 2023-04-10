@@ -14,6 +14,13 @@ import { AdminViewUsersComponent } from './admin/admin-view-users/admin-view-use
 import { AdminViewBooksComponent } from './admin/admin-view-books/admin-view-books.component';
 import { AdminViewQueriesComponent } from './admin/admin-view-queries/admin-view-queries.component';
 import { AdminChangePwdComponent } from './admin/admin-change-pwd/admin-change-pwd.component';
+import { ShopkeeperProfileComponent } from './shopkeeper/shopkeeper-profile/shopkeeper-profile.component';
+import { ShopkeeperViewUsersComponent } from './shopkeeper/shopkeeper-view-users/shopkeeper-view-users.component';
+import { ShopkeeperAddBooksComponent } from './shopkeeper/shopkeeper-add-books/shopkeeper-add-books.component';
+import { ShopkeeperViewBooksComponent } from './shopkeeper/shopkeeper-view-books/shopkeeper-view-books.component';
+import { ShopkeeperOrderBooksComponent } from './shopkeeper/shopkeeper-order-books/shopkeeper-order-books.component';
+import { ShopkeeperViewQueriesComponent } from './shopkeeper/shopkeeper-view-queries/shopkeeper-view-queries.component';
+import { ShopkeeperChangePwdComponent } from './shopkeeper/shopkeeper-change-pwd/shopkeeper-change-pwd.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'welcome',pathMatch:'full'},
@@ -32,7 +39,15 @@ const routes: Routes = [
     {path:'admin-change-pwd', component:AdminChangePwdComponent}
   ]},
   {path:'user-dashboard', component:UserDashboardComponent},
-  {path:'shopkeeper-dashboard', component:ShopkeeperDashboardComponent}
+  {path:'shopkeeper-dashboard', component:ShopkeeperDashboardComponent,children:[
+    {path:'sk-profile', component:ShopkeeperProfileComponent},
+    {path:'sk-view-users', component:ShopkeeperViewUsersComponent},
+    {path:'sk-add-books', component:ShopkeeperAddBooksComponent},
+    {path:'sk-view-books', component:ShopkeeperViewBooksComponent},
+    {path:'sk-order-books', component:ShopkeeperOrderBooksComponent},
+    {path:'sk-view-queries', component:ShopkeeperViewQueriesComponent},
+    {path:'sk-change-pwd',component:ShopkeeperChangePwdComponent}
+  ]}
 ];
 
 @NgModule({

@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center align-items-center mt-3">
     <div class="col-md-4 p-5 shadow-sm  bg-white">
-        <h2 class="text-center mb-4 text-primary">Admin Change Password</h2>
-        <form [formGroup]="adminChangePWDForm" (ngSubmit)="changePWD()">
+        <h2 class="text-center mb-4 text-primary">Shopkeeper Change Password</h2>
+        <form [formGroup]="changePWDForm" (ngSubmit)="changePWD()">
             <div class="mb-3">
                 <label class="form-label">Username</label>
                 <input type="email" class="form-control border border-primary" formControlName="username" [attr.disabled]="true">

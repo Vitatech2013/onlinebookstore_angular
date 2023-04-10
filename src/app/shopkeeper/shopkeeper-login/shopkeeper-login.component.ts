@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ShopkeeperService } from 'src/app/shared/service/shopkeeper.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class ShopkeeperLoginComponent implements OnInit {
   shopkeeperLoginForm!:FormGroup
   constructor(
     private fb:FormBuilder,
-    private shopKeeperService:ShopkeeperService
+    private shopKeeperService:ShopkeeperService,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -25,7 +27,13 @@ skLogin(){
   let pwd=this.shopkeeperLoginForm.value.password
 if(this.shopkeeperLoginForm.valid){
   this.shopKeeperService.shopkeeperlogin(uname,pwd).subscribe((res:any)=>{
-    alert('success')
+    if(res){
+      sessionStorage.setItem('shopkeeper', JSON.stringify(res))
+      this.router.navigate(['shopkeeper-dashboard'])
+    }else{
+      alert('something went wrong')
+    }
+    
   })
 }
 }
