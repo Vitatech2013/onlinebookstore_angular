@@ -49,4 +49,10 @@ url=environment.baseUrl
   addBook(data:any){
     return this.http.post(`${this.url}/shopkeeper/addBooks`,data)
   }
+  deleteBook(id:any){
+    return this.http.delete(`${this.url}/shopkeeper/deleteBook/${id}`)
+  }
+  updateBook(id:any,data:any){
+    return this.http.put(`${this.url}/shopkeeper/updateBook/${id}`,data)
+  }
 }

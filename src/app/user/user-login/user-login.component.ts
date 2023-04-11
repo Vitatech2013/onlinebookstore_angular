@@ -26,8 +26,13 @@ userLogin!:FormGroup
   login(){
     if(this.userLogin.valid){
       this.userService.userLogin(this.userLogin.value.username,this.userLogin.value.password).subscribe((res:any)=>{
-        sessionStorage.setItem('user', JSON.stringify(res))
-        this.router.navigate(['/user-dashboard'])
+        if(res){
+          sessionStorage.setItem('user', JSON.stringify(res))
+          this.router.navigate(['/user-dashboard'])
+        }else{
+          alert('user not found')
+        }
+        
       })
       
     }

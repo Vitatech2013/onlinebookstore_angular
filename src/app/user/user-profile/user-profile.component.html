@@ -4,7 +4,7 @@
             <div class="card mt-4">
                 <div class="card-header fw-bold text-center">User-Registration</div>
                 <div class="card-body" style="padding: 2rem !important;">
-                    <form [formGroup]="userRegistrationForm" (ngSubmit)="isRegister()">
+                    <form [formGroup]="userProfileForm" (ngSubmit)="userUpdate()">
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
@@ -23,13 +23,13 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label >Username:</label>
-                                    <input type="text" class="form-control" formControlName="username">
+                                    <input type="text" class="form-control" formControlName="username" [attr.disabled]="true">
                                   </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>Password:</label>
-                                    <input type="password" class="form-control" formControlName="password">
+                                    <input type="password" class="form-control" formControlName="password" [attr.disabled]="true">
                                   </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                         <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-primary">Register</button>
+                        <button type="submit" class="btn btn-primary">update</button>
                     </div>
                       </form>
                 </div>

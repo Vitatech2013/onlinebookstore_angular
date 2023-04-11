@@ -25,7 +25,15 @@ import { ShopkeeperAddBooksComponent } from './shopkeeper/shopkeeper-add-books/s
 import { ShopkeeperViewBooksComponent } from './shopkeeper/shopkeeper-view-books/shopkeeper-view-books.component';
 import { ShopkeeperOrderBooksComponent } from './shopkeeper/shopkeeper-order-books/shopkeeper-order-books.component';
 import { ShopkeeperViewQueriesComponent } from './shopkeeper/shopkeeper-view-queries/shopkeeper-view-queries.component';
-import { ShopkeeperChangePwdComponent } from './shopkeeper/shopkeeper-change-pwd/shopkeeper-change-pwd.component'
+import { ShopkeeperChangePwdComponent } from './shopkeeper/shopkeeper-change-pwd/shopkeeper-change-pwd.component';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
+import { UserViewShopsComponent } from './user/user-view-shops/user-view-shops.component';
+import { UserSearchbooksComponent } from './user/user-searchbooks/user-searchbooks.component';
+import { UserMybooksComponent } from './user/user-mybooks/user-mybooks.component';
+import { UserAddQueriesComponent } from './user/user-add-queries/user-add-queries.component';
+import { UserFavouritesComponent } from './user/user-favourites/user-favourites.component';
+import { UserViewQueriesComponent } from './user/user-view-queries/user-view-queries.component';
+import { UserChangePasswordComponent } from './user/user-change-password/user-change-password.component'
 
 @NgModule({
   declarations: [
@@ -50,7 +58,15 @@ import { ShopkeeperChangePwdComponent } from './shopkeeper/shopkeeper-change-pwd
     ShopkeeperViewBooksComponent,
     ShopkeeperOrderBooksComponent,
     ShopkeeperViewQueriesComponent,
-    ShopkeeperChangePwdComponent
+    ShopkeeperChangePwdComponent,
+    UserProfileComponent,
+    UserViewShopsComponent,
+    UserSearchbooksComponent,
+    UserMybooksComponent,
+    UserAddQueriesComponent,
+    UserFavouritesComponent,
+    UserViewQueriesComponent,
+    UserChangePasswordComponent
   ],
   imports: [
     BrowserModule,

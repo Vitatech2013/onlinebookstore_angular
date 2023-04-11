@@ -1,0 +1,28 @@
+<div class="container table-responsive py-5"> 
+    <h2 class="text-center">Favourites</h2>
+    <table class="table table-bordered table-hover text-center">
+      <thead class="table-dark">
+        <tr>
+          
+          <th scope="col">S.No</th>
+          <th scope="col">User</th>
+          <th scope="col">Book Name</th>
+          <th scope="col">Author</th>
+          <th scope="col">Publisher</th>
+          <th scope="col">volume</th>
+          <th scope="col">image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let f of favourites index as i">
+          <td>{{i+1}}</td>
+          <td>{{f.username}}</td>
+          <td>{{f.bookname}}</td>
+          <td>{{f.author}}</td>
+          <td>{{f.publisher}}</td>
+          <td>{{f.volume}}</td>
+          <td style="width:10%"><img src="{{f.image}}" style="width:100%"> </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>

@@ -21,6 +21,14 @@ import { ShopkeeperViewBooksComponent } from './shopkeeper/shopkeeper-view-books
 import { ShopkeeperOrderBooksComponent } from './shopkeeper/shopkeeper-order-books/shopkeeper-order-books.component';
 import { ShopkeeperViewQueriesComponent } from './shopkeeper/shopkeeper-view-queries/shopkeeper-view-queries.component';
 import { ShopkeeperChangePwdComponent } from './shopkeeper/shopkeeper-change-pwd/shopkeeper-change-pwd.component';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
+import { UserViewShopsComponent } from './user/user-view-shops/user-view-shops.component';
+import { UserSearchbooksComponent } from './user/user-searchbooks/user-searchbooks.component';
+import { UserMybooksComponent } from './user/user-mybooks/user-mybooks.component';
+import { UserFavouritesComponent } from './user/user-favourites/user-favourites.component';
+import { UserAddQueriesComponent } from './user/user-add-queries/user-add-queries.component';
+import { UserViewQueriesComponent } from './user/user-view-queries/user-view-queries.component';
+import { UserChangePasswordComponent } from './user/user-change-password/user-change-password.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'welcome',pathMatch:'full'},
@@ -38,7 +46,16 @@ const routes: Routes = [
     {path:'admin-view-queries', component:AdminViewQueriesComponent},
     {path:'admin-change-pwd', component:AdminChangePwdComponent}
   ]},
-  {path:'user-dashboard', component:UserDashboardComponent},
+  {path:'user-dashboard', component:UserDashboardComponent,children:[
+    {path:'user-profile', component:UserProfileComponent},
+    {path:'user-shops', component:UserViewShopsComponent},
+    {path:'user-searchbooks',component:UserSearchbooksComponent},
+    {path:'user-mybooks',component:UserMybooksComponent},
+    {path:'user-favourites',component:UserFavouritesComponent},
+    {path:'user-add-queries',component:UserAddQueriesComponent},
+    {path:'user-view-queries',component:UserViewQueriesComponent},
+    {path:'user-change-pwd',component:UserChangePasswordComponent},
+  ]},
   {path:'shopkeeper-dashboard', component:ShopkeeperDashboardComponent,children:[
     {path:'sk-profile', component:ShopkeeperProfileComponent},
     {path:'sk-view-users', component:ShopkeeperViewUsersComponent},

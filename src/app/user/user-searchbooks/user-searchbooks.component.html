@@ -1,0 +1,59 @@
+<div class="row mt-4">
+    <div class="col-sm-4 m-auto">
+        <form [formGroup]="searchBookForm" (ngSubmit)="searchBook()">
+            <div class="form-group row">
+              <label class="control-label col-sm-3">Search Book:</label>
+              <div class="col-sm-9">
+                <input type="email" class="form-control" formControlName="bookname">
+              </div>
+            </div>
+            <div class="text-center mt-4">
+                <button class="btn btn-success">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container table-responsive py-5" *ngIf="searchTable"> 
+    <table class="table table-bordered table-hover text-center">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">S.No</th>
+          <th scope="col">ShopKeeper</th>
+          <th scope="col">Category</th>
+          <th scope="col">Sub-Category</th>
+          <th scope="col">Book name</th>          
+          <th scope="col">Author</th>
+          <th scope="col">Publisher</th>
+          <th scope="col">Volume</th>
+          <th scope="col">Price</th>
+          <th scope="col">Type</th>
+          <th scope="col">Image</th>
+          <th scope="col">Download</th>
+          <th scope="col">Like</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="books.length==0">
+            <h2 class="text-center">No Data Found</h2>
+        </tr>
+        <tr *ngFor="let s of books index as i">
+          <td>{{i+1}}</td>
+          <td>{{s.username}}</td>
+          <td>{{s.category}}</td>
+          <td>{{s.subcategory}}</td>
+          <td>{{s.bookname}}</td>
+          <td>{{s.author}}</td>
+          <td>{{s.publisher}}</td>
+          <td>{{s.volume}}</td>
+          <td>{{s.price}}</td>
+          <td>{{s.type}}</td>
+          <td class="w-10p"><img src="{{s.image}}" ></td>
+          <td> <i class="bi bi-arrow-down-circle-fill" style="font-size: 2em; color: rgb(37, 105, 233);" (click)="downloadBook(s.file)"></i></td>
+        <td><i class="bi bi-hand-thumbs-up" style="font-size: 2em; color: rgb(37, 105, 233);"></i></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    

@@ -8,34 +8,36 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto w-100 justify-content-end ">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/admin-dashboard" routerLinkActive="active">Home</a>
+            <a class="nav-link" routerLink="/user-dashboard" routerLinkActive="active">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="admin-view-shopkeepers" routerLinkActive="active">Profile</a>
+            <a class="nav-link" routerLink="user-profile" routerLinkActive="active">Profile</a>
             <li class="nav-item">
-              <a class="nav-link" routerLink="admin-view-users" routerLinkActive="active">Shops</a>
+              <a class="nav-link" routerLink="user-shops" routerLinkActive="active">Shops</a>
               <li class="nav-item">
-                <a class="nav-link" routerLink="admin-view-books" routerLinkActive="active">SearchBooks</a>
+                <a class="nav-link" routerLink="user-searchbooks" routerLinkActive="active">SearchBooks</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="admin-view-queries" routerLinkActive="active">MyBooks</a>
+                <a class="nav-link" routerLink="user-mybooks" routerLinkActive="active">MyBooks</a>
               </li>
+              
               <li class="nav-item">
-                <a class="nav-link" routerLink="admin-view-queries" routerLinkActive="active">AddQueries</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" routerLink="admin-view-queries" routerLinkActive="active">Favourites</a>
+                <a class="nav-link" routerLink="user-favourites" routerLinkActive="active">Favourites</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" routerLink="admin-view-queries" routerLinkActive="active">ViewQueries</a>
+                <a class="nav-link" routerLink="user-add-queries" routerLinkActive="active">AddQueries</a>
+              </li>
+
+
+              <li class="nav-item">
+                <a class="nav-link" routerLink="user-view-queries" routerLinkActive="active">ViewQueries</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="admin-change-pwd" routerLinkActive="active">Changepassword</a>
+                <a class="nav-link" routerLink="user-change-pwd" routerLinkActive="active">Changepassword</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" >Logout</a>
+                <a class="nav-link" (click)="logOut()">Logout</a>
               </li>                
         </ul>
       </div>

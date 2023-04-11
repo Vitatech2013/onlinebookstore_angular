@@ -1,0 +1,29 @@
+<div class="container table-responsive py-5"> 
+    <table class="table table-bordered table-hover text-center">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">S.No</th>
+          <th scope="col">Username</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Email</th>
+          <th scope="col">Shopname</th>          
+          <th scope="col">Branch</th>
+          <th scope="col">Shop Adrress</th>
+          <th scope="col">viewBooks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let s of shops index as i">
+          <td>{{i+1}}</td>
+          <td>{{s.username}}</td>
+          <td>{{s.mobileno}}</td>
+          <td>{{s.emailid}}</td>
+          <td>{{s.shopname}}</td>
+          <td>{{s.branch}}</td>
+          <td>{{s.shopaddress}}</td>
+          <td> <i class="bi bi-eye-fill" style="font-size: 1.5em;color: blue;"></i> </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    

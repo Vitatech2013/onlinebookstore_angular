@@ -1,0 +1,24 @@
+<div class="container table-responsive py-5"> 
+    <table class="table table-bordered table-hover text-center">
+      <thead class="table-dark">
+        <tr>
+          
+          <th scope="col">S.No</th>
+          <th scope="col">Shop Name</th>
+          <th scope="col">Book Name</th>
+          <th scope="col">Author</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let q of queries index as i">
+          <td>{{i+1}}</td>
+          <td>{{q.shopname}}</td>
+          <td>{{q.bookname}}</td>
+          <td>{{q.author}}</td>
+          <td>{{q.description}}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    
