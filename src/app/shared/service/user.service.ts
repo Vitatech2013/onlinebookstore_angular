@@ -50,4 +50,15 @@ searchBooks(b:any, a:any){
 viewFavourites(u:any){
   return this.http.get(`${this.url}/user/viewFavourites?username=${u}`)
 }
+orderBooks(data:any){
+  return this.http.post(`${this.url}/user/order`,data)
+}
+viewOrders(u:any){
+  return this.http.get(`${this.url}/user/viewOrders?username=${u}`)
+}
+addFavourites(data:any){
+  return this.http.post(`${this.url}/user/addFavourite`,data)
+}
+
+
 }

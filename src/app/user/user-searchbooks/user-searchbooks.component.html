@@ -1,4 +1,4 @@
-<div class="row mt-4">
+<div class="row g-0 mt-4">
     <div class="col-sm-4 m-auto">
         <form [formGroup]="searchBookForm" (ngSubmit)="searchBook()">
             <div class="form-group row">
@@ -51,7 +51,7 @@
           <td>{{s.type}}</td>
           <td class="w-10p"><img src="{{s.image}}" ></td>
           <td> <i class="bi bi-arrow-down-circle-fill" style="font-size: 2em; color: rgb(37, 105, 233);" (click)="downloadBook(s.file)"></i></td>
-        <td><i class="bi bi-hand-thumbs-up" style="font-size: 2em; color: rgb(37, 105, 233);"></i></td>
+        <td><i class="bi bi-hand-thumbs-up" style="font-size: 2em; color: rgb(37, 105, 233);" (click)="addtoFavourites(s)"></i></td>
         </tr>
       </tbody>
     </table>

@@ -55,4 +55,7 @@ url=environment.baseUrl
   updateBook(id:any,data:any){
     return this.http.put(`${this.url}/shopkeeper/updateBook/${id}`,data)
   }
+  viewMyOrders(s:any){
+    return this.http.get(`${this.url}/shopkeeper/viewOrders?skusername=${s}`)
+  }
 }

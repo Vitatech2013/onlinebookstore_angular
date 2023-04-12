@@ -21,9 +21,55 @@
           <td>{{s.shopname}}</td>
           <td>{{s.branch}}</td>
           <td>{{s.shopaddress}}</td>
-          <td> <i class="bi bi-eye-fill" style="font-size: 1.5em;color: blue;"></i> </td>
+          <td> <i class="bi bi-eye-fill" style="font-size: 1.5em;color: blue;" (click)="showBooksinshop(s.username)"></i> </td>
         </tr>
       </tbody>
     </table>
     </div>
     
+    <dialog id="viewShopBooks">
+      <i class="bi bi-x-square-fill" style="font-size: 2em; color: crimson; float: right;" onclick="viewShopBooks.close()"></i>
+      <div class="container-fluid table-responsive"> 
+        <table class="table table-bordered table-hover text-center align-middle">
+          <thead class="table-dark">
+            <tr>
+              
+              <th scope="col">S.No</th>
+              <th scope="col">Shop-Keeper</th>
+              <th scope="col">Category</th>
+              <th scope="col">Sub-Category</th>
+              <th scope="col">Book-Name</th>
+              <th scope="col">Authour</th>
+              <th scope="col">Publisher</th>
+              <th scope="col">Volumes</th>
+              <th scope="col">Price</th>
+              <th scope="col">Type</th>
+              <th scope="col">Image</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let b of shopBooks index as i">
+              <td>{{i+1}}</td>
+              <td>{{b.username}}</td>
+              <td>{{b.category}}</td>
+              <td>{{b.subcategory}}</td>
+              <td>{{b.bookname}}</td>
+              <td>{{b.author}}</td>
+              <td>{{b.publisher}}</td>
+              <td>{{b.volume}}</td>
+              <td>{{b.price}}</td>
+              <td>{{b.type}}</td>
+              <td style="width: 10%;"><img src="{{b.image}}" style="width:100%"></td>
+              <td> 
+                <i [hidden]="b.type=='cost'" class="bi bi-arrow-down-circle-fill" style="font-size: 2em; color: rgb(37, 105, 233);" (click)="downloadBook(b.file)"></i>
+                <i [hidden]="b.type=='free'" class="bi bi-bag-fill" style="font-size: 2em; color: rgb(37, 105, 233);" (click)="buyBook(b)"></i>
+                &nbsp;
+                <i class="bi bi-hand-thumbs-up" style="font-size: 2em; color: rgb(37, 105, 233);" (click)="addFavouritesList(b)"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        
+    </dialog>

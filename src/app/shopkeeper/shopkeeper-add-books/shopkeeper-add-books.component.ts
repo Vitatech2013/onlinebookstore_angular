@@ -64,6 +64,8 @@ bookurl:any
     }
     this.shopkeeperService.addBook(data).subscribe((res:any)=>{
       alert('book added sucessfully')
+      console.log(res);
+      
       this.addBookForm.reset()
     })
     

@@ -68,8 +68,6 @@ this.editBookForm.patchValue({
       volume:book.volume,
       type:book.type,
       price:book.price,
-      image:book.image,
-      file:book.file
 })
   }
 isCategory(event:any){
@@ -103,6 +101,8 @@ onSelectFile(event:any){
           file:this.bookurl,
           username:this.sk
         }
+        console.log("exsisted");
+        
         this.shopkeeperService.updateBook(this.selectedbook._id,data).subscribe((res:any)=>{
           window.location.reload()
         })
@@ -114,6 +114,8 @@ onSelectFile(event:any){
           file:this.selectedbook.file,
           username:this.sk
         }
+        console.log('not exsited');
+        
         this.shopkeeperService.updateBook(this.selectedbook._id,data).subscribe((res:any)=>{
           window.location.reload()
         })

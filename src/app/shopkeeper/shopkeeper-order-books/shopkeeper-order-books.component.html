@@ -1,1 +1,33 @@
-<p>shopkeeper-order-books works!</p>
+<div class="container-fluid table-responsive py-5"> 
+    <table class="table table-bordered table-hover text-center align-middle">
+      <thead class="table-dark">
+        <tr>
+          
+          <th scope="col">S.No</th>
+          <th scope="col">Shop-Keeper</th>
+          <th scope="col">Category</th>
+          <th scope="col">Sub-Category</th>
+          <th scope="col">Book-Name</th>
+          <th scope="col">Authour</th>
+          <th scope="col">Publisher</th>
+          <th scope="col">Volumes</th>
+          <th scope="col">Price</th>
+          <th scope="col">Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let b of orders index as i">
+          <td>{{i+1}}</td>
+          <td>{{b.username}}</td>
+          <td>{{b.category}}</td>
+          <td>{{b.subcategory}}</td>
+          <td>{{b.bookname}}</td>
+          <td>{{b.author}}</td>
+          <td>{{b.publisher}}</td>
+          <td>{{b.volume}}</td>
+          <td>{{b.price}}</td>
+          <td style="width:10%"><img src="{{b.image}}" style="width:100%"></td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
